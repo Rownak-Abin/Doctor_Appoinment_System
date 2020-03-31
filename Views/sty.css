@@ -1,0 +1,179 @@
+
+
+			nav{
+				position:absolute;
+				top:0px;
+				left: 0px;
+				width:100%;
+				height:65px;
+				padding: 0px 70px;
+				box-sizing: border-box;
+				background:#000;
+				opacity:0.4;
+				
+			}
+			nav ul{
+				list-style:none;
+				float:right;
+				margin:0;
+				padding:0;
+				position:relative;
+				display:flex;
+				height:10px;
+				
+			}
+			
+			nav ul li a{
+				align-items: center;
+				line-height:70px;
+				
+				
+				color:#FFF;
+				top: 50px;
+				padding:30px;
+				
+				text-decoration:none;
+				 font-family: sans-serif;
+				font-size:17px;
+				font-weight:bold;
+				
+			}
+			
+			nav ul li a:hover {
+				
+				background-color: #f39d1a;
+			}
+			
+			
+			.MainMenu{
+				position:absolute;
+				top:65px;
+				left: 0px;
+				width:100%;
+				height:125px;
+				padding: 0px 70px;
+				box-sizing: border-box;
+				background:	#000;
+				opacity:0.6;
+				
+				
+			}
+			
+			.MainMenu ul{
+				list-style:none;
+				position:relative;
+				margin:0px;
+				padding:0px;
+				display:flex;
+				height:30px;
+			
+				
+				
+			}
+			
+			.MainMenu ul li:hover ul{
+				background:#fff;
+				display: block;
+				opacity:1;
+				visibility:visible; 
+				
+			}
+			
+			.MainMenu ul li a{
+				
+				line-height:120px;
+				height:10px;
+				color:#FFFACD;
+				padding:0px 30px;
+				text-decoration:none;
+				text-transform:uppercase;
+				font-size:17px;
+				font-weight:bold;
+				font-family: sans-serif;
+			
+			}
+			
+			.MainMenu ul li a:hover{
+				color: #fff;
+				
+				background:#2196f3;
+				box-shadow: 0 0 10px #2196f3, 0 0 10px #2196f3,
+				0 0 10px #2196f3; 
+				
+				
+			}
+			
+			
+			.ulul{
+			
+			position:relative;
+				top:-30px;
+				height:10px;
+			
+				width:230px;
+				
+		
+				visibility:hidden;
+				
+				
+			}
+			
+			.ulul ul li a{
+			background: #000;
+			
+				display:flex;
+				align-items:center;
+				top:-30px;
+				height:75px;
+			
+				
+			}
+			
+			
+			
+			.ulul ul li a:hover{
+				
+				background:#4dd0e1;
+			}
+			
+			
+			.Lastnav{
+				position:absolute;
+				top:1790px;
+				left: 0px;
+				height:280px;
+				background:#20B2AA;
+				width:100%
+
+				}
+				
+					.para{
+			
+			position:absolute;
+			column-count:2;
+			text-align:justify;
+	}
+	.Wp{
+		margin-top:-10px;
+		margin-left:-10px;
+		height:610px;
+		width:1520px;
+		
+	}
+	
+	.carousel-item img {
+		
+		
+		height:620px;
+		
+		
+		
+		
+	}
+	
+	
+	.cd{
+		
+		text-color:red;
+	}
+	

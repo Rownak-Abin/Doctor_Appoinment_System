@@ -1,0 +1,61 @@
+
+
+.bg-model{
+	width:100%;
+	height:100%;
+	background:url(Doclist.php);
+	background-color:black;
+	opacity:0.6;
+	position: absolute;
+	top:0;
+	left:0;
+	display:absolute;
+	
+}
+
+.Contain{
+	
+	margin-top:80px;
+	margin-left:430px;
+	padding-left:35px;
+	padding-top:40px;
+	padding-right:30px;
+	
+	width:600px;
+	height:460px;
+	
+	background-color: #B3FFF2;
+	border-radius: 16px;
+	
+}
+
+.Rqbutton{
+		position:absolute;
+		top:520px;
+		 border: none;
+		border: 1px solid #000;
+		background: #00D4FF;
+		left:60%;
+		outline: none;
+		height: 30px;
+		color: #000;
+		font-size: 16px;
+		padding-left: 35px;
+		padding-right: 35px;
+		margin-left:-235px;
+		border-radius: 16px;
+
+			}
+			
+	.Rqbutton:hover{
+		 background: #FF4D4D;
+		
+		
+		
+	}
+
+
+
+
+
+

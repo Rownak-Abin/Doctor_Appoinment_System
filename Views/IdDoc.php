@@ -7,11 +7,26 @@
 	<body style="background-size: 100% 100%;  height:450px; width:600px;">
 	
 	
+	<?php
+	
+		
+			if(isset($_GET['id'])){
+				$id = $_GET['id'];
+				echo $id;
+				
+			}
+	
+	
+	
+	
+	?>
+	
+	
 	
 	
 	
 		<div class="backtxt">
-			Medical
+			Health
 		</div>
 		
 		<div class="backtxt2">
@@ -19,8 +34,8 @@
 		</div>
 		
 		<div class="container">
-  <a href="NewReq.php"><button class="btn btn1">New Requests</button></a>
- <a href="PatientList.php"> <button class="btn btn2">Patient List</button></a>
+  <a href="NewReq.php?id=<?php echo $id; ?>"><button class="btn btn1" type="submit" name="submit">New Requests</button></a>
+ <a href="PatientList.php?id=<?php echo $id; ?>"> <button class="btn btn2" type="submit" name="submit">Patient List</button></a>
 		</div>
 		
 		<div class="Sidenav">

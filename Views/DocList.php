@@ -1,7 +1,14 @@
 <?php
+
+			if(isset($_GET['category'])){
+				$categ = $_GET['category'];
+				
+				echo $categ;
+				
+			}
 	
 	require '../Controller/DocLIstCtrl.php';
-	$Doctors=getAllDoctors();
+	$Doctors=getAllDoctors($categ);
 
 ?>
 
@@ -34,8 +41,26 @@
 	
 
 	<?php
-				foreach($Doctors as $Doc)
+	
+			
+	
+		
+					
+					foreach($Doctors as $Doc)
 				{
+						/*$typ= $Doc["category"];
+						
+						
+					
+						if($typ=="Admin"){
+							
+							continue;
+						}
+						
+						else{*/
+							
+						
+					
 					
 					echo "<div class='frame'> ";
 					
@@ -43,7 +68,7 @@
 					echo "<img src= '$Doc[image]' width='180px;' height='133px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					
 					//name
-					echo " <h2 style=' font-family:arial;'> &nbsp $Doc[name] </h2> ";
+					echo " <h2 style=' font-family:arial;'> &nbsp Dr. $Doc[name] </h2> ";
 					
 					//category
 					echo " <h4 style='color:#696969;font-family:arial;'> &nbsp &nbsp $Doc[category] </h4> ";
@@ -68,10 +93,12 @@
 					echo "<br><br>";
 					
 					
-					
+						
 				}
+					
+					
 				
-				
+			
 
 
 	?>

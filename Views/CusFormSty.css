@@ -3,9 +3,10 @@
 .bg-model{
 	width:100%;
 	height:100%;
-	background:url(Doclist.php);
-	background-color:black;
-	opacity:0.6;
+	background:url(img/bc.jpg);
+	opacity:0.8 ;
+	
+	background-size:cover;
 	position: absolute;
 	top:0;
 	left:0;
@@ -13,7 +14,24 @@
 	
 }
 
+.input{
+	border:none;
+	outline:none;
+	background: none;
+	border-bottom: 1.5px solid #696969;
+	font-size:17px;
+	padding-bottom:5px;
+	font-family:arial;
+	color:#8B0000;
+	
+	
+}
+
 .Contain{
+	
+	position:absolute;
+	top:0px;
+	left:165px;
 	
 	margin-top:80px;
 	margin-left:430px;
@@ -21,21 +39,22 @@
 	padding-top:40px;
 	padding-right:30px;
 	
-	width:600px;
-	height:460px;
+	width:615px;
+	height:510px;
 	
-	background-color: #B3FFF2;
-	border-radius: 16px;
-	
+	background-color: #FDF5E6;
+	 border-top-right-radius: 16px;
+	 border-bottom-right-radius: 16px;
+	box-shadow:10px 15px 15px rgba(0,0,0,0.6);
 }
 
 .Rqbutton{
 		position:absolute;
-		top:520px;
+		top:488px;
 		 border: none;
 		border: 1px solid #000;
 		background: #00D4FF;
-		left:60%;
+		left:500px;
 		outline: none;
 		height: 30px;
 		color: #000;
@@ -55,7 +74,16 @@
 	}
 
 
-
+.spimg{
+	 position:absolute; 
+	 top:80px; 
+	 left:252px; 
+	 height:550px;
+	 width:350px;
+	 border-top-left-radius: 16px;
+	 border-bottom-left-radius: 16px;
+	
+}
 
 
 

@@ -2,9 +2,7 @@
 	<head>
 	
 		<link rel="stylesheet" type="text/css" href="CusFormSty.css">
-		<style>
 		
-		</style>
 	</head>
 	
 	<body>	
@@ -39,7 +37,10 @@
 		if(isset($_POST['submit'])){
 			
 			insertPatient();
-			message();
+			//message();
+			//header("location:Cusform.php?id= '".$_GET['id']."' ");
+			
+			//echo "<script> alert('Request sent successfuly');</script>";
 			
 		}
 			
@@ -205,52 +206,67 @@
 			?>
 			
 			
+			
 		<div class="bg-model">
+		<div  >
+			<img class="spimg" src="img/edit.jpg" >
+		</div>
+		
+		
 			<div class="Contain">
 			
-			<a href="DocList.php"><input style="position:relative;left:537px; top:0px;" type="button" value="X"></a>
+			<a href="hos.php"><input  style="position:relative;left:537px; top:0px;" type="button" value="X"></a>
 			
-			<strong style="font-family:san-serif; position:relative; left:5px;"> Name:</strong>	
-			<input style="position:relative; left:21px;"  type="text" name="fstnm"  placeholder=" Name"><br>
-			<span style="color:red;position:relative; left:97px;"><?php echo $err_name;?></span><br>
-			
-			
-				<strong  style="font-family:san-serif;position:relative; left:32px; " > Phone:</strong> 
-			<input style="position:relative; left:48px; width:100px; "  type="text" name="phone" placeholder="01XXXXXXXXXX" >
-			<span style="color:red;position:relative; left:47px;"><?php echo $err_phn;?></span>
+			<!--<strong style="font-family:san-serif; position:relative; left:5px;" > Name:</strong>-->
+			<input class="input" style="position:absolute; left:50px; top:40px; width:428px;"  type="text" name="fstnm"  placeholder=" Name"><br>
+			<span style="color:red;position:absolute; top:70px; left:50px;"><?php echo $err_name;?></span><br>
 			
 			
 			
-			<div style="font-family:san-serif;position:relative; left:28px;" >
-			<strong style="position:relative; top:22px;"> E-mail:</strong> 
-			<input style="position:relative; left:17px; top:22px;" type="text" name="email" placeholder="example@gmail.com"><br>
-			<span style="color:red;position:relative; left:70px; top:20px;"><?php echo $err_eml;?></span><br><br></div>
 			
-			
-			<strong style="font-family:san-serif;position:relative; left:42px;top:10px;" > Age:</strong> 
-			<input style="position:relative; left:64px;top:10px; "   type="text" name="ag" placeholder="Age"><br>
-			<span style="color:red;position:relative; top:10px;left:97px;"><?php echo $err_ag;?></span><br><br>
-			
-			<strong for="wei" style="font-family:san-serif;position:relative; left:22px;" > Weight:</strong> 
-			<input style="position:relative; left:42px; width:100px" type="text" name="weight" placeholder="x kg" >
-			<span style="color:red;position:relative; left:47px;"><?php echo $err_wg;?></span>
-			
-			
-			<strong style="font-family:san-serif; position:relative; left:76px;" > Height:</strong> 
-			<input style="position:relative; left:92px; width:100px"   type="text" name="height" placeholder="meters" >
-			<span style="color:red;position:relative; left:97px;"><?php echo $err_hg;?></span><br><br>
+			<div >
+			<!--<strong style="position:relative; top:22px;"> E-mail:</strong> -->
+			<input class="input" style="position:absolute; left:50px; top:100px; width:428px;"  type="text" name="email" placeholder="example@gmail.com"><br>
+			<span style="color:red;position:absolute; left:50px; top:130px;"><?php echo $err_eml;?></span><br><br></div>
 			
 			
 			
 			
 			
 			
-			<div style="position:relative; left:20px;">
-			<strong style="font-family:san-serif;"> Gender: &nbsp &nbsp  </strong> 
+			<!--	<strong   style="font-family:san-serif;position:relative; left:32px; " > Phone:</strong>  -->
+			<input class="input" style="position:absolute; left:50px; top:160px; width:180px;"  type="text" name="phone" placeholder="+88 01XXXXXXX" >
+			<span style="color:red;position:absolute; top:190px; left:50px;"><?php echo $err_phn;?></span>
+			
+			
+			
+			
+			
+			
+		<!--	<strong style="font-family:san-serif;position:relative; left:42px;top:10px;" > Age:</strong> -->
+			<input class="input" style="position:absolute; left:300px; top:160px; width:178px;"  type="text" name="ag" placeholder="Age"><br>
+			<span style="color:red;position:absolute; top:190px;left:300px;"><?php echo $err_ag;?></span><br><br>
+			
+		<!--	<strong for="wei" style="font-family:san-serif;position:relative; left:22px;" > Weight:</strong> -->
+			<input class="input" style="position:absolute; left:50px; top:215px; width:120px;" type="text" name="weight" placeholder="Weight" >
+			<span style="color:red;position:absolute; top:220px; left:175px;"><?php echo $err_wg;?></span>
+			
+			
+		<!--	<strong style="font-family:san-serif; position:relative; left:76px;" > Height:</strong> -->
+			<input class="input" style="position:absolute; left:300px; top:215px; width:120px;"   type="text" name="height" placeholder="Height" >
+			<span style="color:red;position:absolute; top:220px; left:425px;"><?php echo $err_hg;?></span><br><br>
+			
+			
+			
+			
+			
+			
+			<div style="position:absolute; left:50px; top:275px;">
+			<strong style="font-family:arial;"> Gender: &nbsp &nbsp  </strong> 
 			
 			<input type="radio" name="gen" value="Male" > Male 
 					<input type="radio" name="gen" value="Female" > Female
-					<span style="color:red;position:relative; left:97px;"><?php echo $err_gen;?></span>
+					<span style="color:red;position:absolute; top:0; left:260px;"><?php echo $err_gen;?></span>
 					<br><br>
 					</div>
 					
@@ -259,9 +275,9 @@
 					
 					
 					
-			<div style="position:relative; left:20px;">
+			<div style="position:absolute; left:50px; top:325px;">
 			
-				<strong> Existing Disease:  &nbsp &nbsp </strong> 
+				<strong style="font-family:arial;"> Existing Disease:  &nbsp &nbsp </strong> 
 							<input type="checkbox" name="History[]" value="High Blood pressure"> High Blood pressure
 							<input type="checkbox" name="History[]" value="Diabetis"> Diabetis
 							<input type="checkbox" name="History[]" value="Asthma"> Asthma
@@ -269,12 +285,14 @@
 
 			</div>
 			
-			<strong style="position:relative; left:20px; top:-70px;" for="CP"> Current Problem:  </strong> 
-			<!--<input style="position:relative; left:34px; height:60px;"  type="text" name="Curpblm" placeholder="Description..."><br><br>-->
-			<textarea rows="5" name="description"  placeholder="Description..." style="position:relative; width:350px; left:35px;"></textarea>	
-			<span style="color:red; position:relative; left:37px;"><?php echo $err_des;?></span><br>
+		<!--	<strong style="position:relative; left:20px; top:-70px;" for="CP"> Current Problem:  </strong> -->
+			
+			<textarea class="input" rows="4" name="description"  placeholder="Description..." style="position:absolute;top:370px; width:428px; left:50px;"></textarea>	
+			<span style="color:red; position:absolute; top:440px; left:500px;"><?php echo $err_des;?></span><br>
 			
 			<input class="Rqbutton" type="submit" name="submit" value="Submit">
+			
+			</div>
 			
 		</form>
 					
@@ -284,7 +302,7 @@
 	</div>
 		
 		
-		</div>
+		
 	</form>
 	
 	</body>

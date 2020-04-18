@@ -1,6 +1,24 @@
 
 	<html>
 		<head>
+		
+		<style>
+		
+		.frame{	
+			position:relative;
+			left: 320px;
+			top: 10px;
+			width: 1300px;
+			height: 470px;  
+			background:	#CCFFFF;
+			box-sizing: border-box;
+			padding-top: 15px;
+			padding-left:21px;
+		
+		}
+	
+		
+		</style>
 			<link rel="stylesheet" type="text/css" href="sty.css">
 	
 		<!-- Latest compiled and minified CSS -->
@@ -14,15 +32,39 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+			<script>
+		function search()
+		{
+			http = new XMLHttpRequest();
+			var search_word=document.getElementById("search_input").value;
+			http.onreadystatechange=function()
+			{
+				if(http.readyState == 4 && http.status == 200)
+				{
+					document.getElementById("search_result").innerHTML=http.responseText;
+				}
+			}
+			http.open("GET","search.php?sk="+search_word,true);
+			http.send();
+		}
+	</script>
+		
+		
+		
+		
+		
 		</head>
 	
 	
-	<body  style="  height:2040px; background-color:#00819C ; " >
+	<body  style="  height:2040px;  " >
 	
 	
 		
 	
-		<div id="carouselExampleIndicators" class="carousel slide" data-interval="4000" data-ride="carousel">
+		<div id="carouselExampleIndicators" class="carousel slide"  data-interval="4000" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
@@ -83,7 +125,7 @@
 					<li><a>     </a></li>
 					<li><a class="active" href="#">HOME</a></li>					
 					<li><a style="position:relative; margin-left:10px;" href="#">NEWS</a></li>
-					<li><a href="#">&nbsp &nbsp  SPECIALISTS</a>
+					<li><a style="width:900px;">&nbsp &nbsp &nbsp  SPECIALISTS</a>
 					<div class="ulul">
 						<ul >
 							<li><a style="padding-left:50px; " href="DocList.php?category=Cardiologist">Cardiologist</a></li>
@@ -100,25 +142,52 @@
 					<li><a href="#">HEALTH LIBRARY</a></li>
 				
 				</ul>
+				
 			
+	
 			
 			</div><br><br><br>
 			
-			<div style="position:absolute; color:#B3FFFF; top:700px; left:100px;  text-align:justify; width:400px;">
+			<div >
 			
 			
-					<?php
-					
-					
-					function readMoreFunction($story,$link,$targetFile,$id,$chars) 
+			<input class="search-txt" type="text" id="search_input" onkeyup="search()" placeholder="Search Doctor">
+				<a class="search-btn" style=""><i class="fa fa-search-plus"></i>
+				</a>
+			<div style="position:absolute; left:1245px; color:#fff; top:143px;" id="search_result">
+		
+	</div>
+	
+	
+	<?php
+	
+		function readMoreFunction($story,$link,$targetFile,$id,$chars) 
 					{   
 						 
 						$story = substr($story,0,$chars);  
 						$story = substr($story,0,strrpos($story,' '));  
-						$story = $story."...<a style='color:#FFFACD;' href='$link?$targetFile=$id'>&nbspRead More</a>";  
+						$story = $story."...<a style='color:	#FF6347;' href='$link?$targetFile=$id'>&nbspRead More</a>";  
 						return $story;
 					} 
  
+					
+	
+	?>
+	
+			<div style="position:relative; color:#00008B; left:105px; width:500px; font-size:28px; top:-40px;">
+					News & Events<br><hr color="#8B4513" width="1317px" style="height:0.2px;">
+			
+			
+			</div>
+	
+			<div style="position:absolute; top:70px;">
+			
+			
+			<div class="frame" style="left:103px;">	
+			<div  style="position:absolute; color:	#000; top:20px; left:20px;  text-align:justify; width:368px;">
+			
+			
+					<?php
 					
 					
 				require "../Model/db_connect.php";
@@ -128,27 +197,29 @@
 			{
 				
 				$rows = mysqli_fetch_assoc($users);
-				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],530);
+				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],460);
 
 			
 					
-					echo "<div style='font-size:23px; color:#FFFFCC;'>  $rows[header] <br><hr color='	#00FFFF	'> </div>";
-					echo "<img src= '$rows[image]' width='205px;' height='185px;' style='border:solid white 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
+					echo "<div style='font-size:23px; color:	#DC143C;'>  $rows[header] <br><hr color='	#00BFFF	'> </div>";
+					echo "<img src= '$rows[image]' width='215px;' height='180px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					
 					echo $read_more;
-					
-					
-					
-					
-							
+						
 				
 			}
 		?>
 					
-					</div>
+			</div>
+					
+			</div>		
 					
 					
-			<div style="position:absolute; top:700px; color:#B3FFFF; text-align:justify; left:565px; width:400px;">		
+					
+					
+					
+			<div class="frame" style="left: 558px;">		
+			<div style="position:absolute; top:20px; color:#000; text-align:justify; left:20px; width:368px;">		
 					
 			<?php
 				
@@ -158,10 +229,10 @@
 			{
 				
 				$rows = mysqli_fetch_assoc($users);
-				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],560);	
+				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],460);	
 				
-					echo "<div style=' font-size:23px; color:#FFFFCC;'>    $rows[header] <br><hr color='	#00FFFF	'> </div>";
-					echo "<img src= '$rows[image]' width='205px;' height='185px;' style='border:solid white 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
+					echo "<div style=' font-size:23px; color:#DC143C;'>    $rows[header] <br><hr color='	#00BFFF	'> </div>";
+					echo "<img src= '$rows[image]' width='215px;' height='180px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					echo $read_more;			
 				
 			}
@@ -169,8 +240,12 @@
 
 		</div>
 		
+		</div>
 		
-		<div class="box" style="position:absolute; top:700px; display:fixed; color:#B3FFFF; text-align:justify; left:1030px; width:400px;" >
+		
+		<div class="frame" style="left:1013px;">	
+		
+		<div class="box" style="position:absolute; top:20px;  color:#000; text-align:justify; left:20px; width:368px;" >
 					<?php
 				
 			$query="SELECT * FROM news WHERE id=3";
@@ -179,19 +254,23 @@
 			{
 				
 				$rows = mysqli_fetch_assoc($users);
-				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],580);	
+				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],460);	
 				
-					echo "<div style=' font-size:23px; color:#FFFFCC;'> <td> $rows[header] </td><br><hr color='	#00FFFF	'> </div>";
-					echo "<img src= '$rows[image]' width='205px;' height='185px;' style='border:solid white 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
+					echo "<div style=' font-size:23px; color:#DC143C;'> <td> $rows[header] </td><br><hr color='	#00BFFF	'> </div>";
+					echo "<img src= '$rows[image]' width='215px;' height='180px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					echo $read_more;			
 				
 			}
 		?>
 					
 				</div>
+				
+				</div>
 			
 			
-		<div class="box" style="position:absolute; top:1270px; color:#B3FFFF; text-align:justify; left:100px; width:600px;" >
+			<div class="frame" style="width:640px; top:1250px; background:	#C9FDFF; height:435px; left:100px;">	
+			
+		<div class="box" style="position:absolute; top:20px; color:#000; text-align:justify; left:29px; width:580px;" >
 					<?php
 				
 			$query="SELECT * FROM news WHERE id=4";
@@ -200,17 +279,24 @@
 			{
 				
 				$rows = mysqli_fetch_assoc($users);
-				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],750);	
+				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],650);	
 				
-					echo "<div style='font-size:23px; color:#FFFFCC;'> <td> $rows[header] </td><br><hr color='	#00FFFF	'> </div>";
-					echo "<img src= '$rows[image]' width='235px;' height='185px;' style='border:solid white 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
+					echo "<div style='font-size:23px; color:#DC143C;'> <td> $rows[header] </td><br><hr color='	#00BFFF	'> </div>";
+					echo "<img src= '$rows[image]' width='235px;' height='185px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					echo $read_more;			
 				
 			}
 		?>
 				</div>	
+				</div>
 				
-			<div class="box" style="position:absolute; top:1270px; color:#B3FFFF; text-align:justify; left:800px; width:600px;" >
+				
+				
+				
+		<div class="frame" style="width:640px; top:1250px;   background:#C9FDFF;height:435px; left:785px;">	
+				
+				
+			<div class="box" style="position:absolute; top:20px; color:#000; text-align:justify; left:29px; width:580px;" >
 				
 					<?php
 				
@@ -220,19 +306,23 @@
 			{
 				
 				$rows = mysqli_fetch_assoc($users);
-				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],750);	
+				$read_more = readMoreFunction($rows['text'],"story.php","story_id",$rows['id'],650);	
 				
-					echo "<div style='font-size:23px; color:#FFFFCC;'> <td> $rows[header] </td><br><hr color='	#00FFFF	'> </div>";
-					echo "<img src= '$rows[image]' width='235px;' height='185px;' style='border:solid white 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
+					echo "<div style='font-size:23px; color:#DC143C;'> <td> $rows[header] </td><br><hr color='	#00BFFF	'> </div>";
+					echo "<img src= '$rows[image]' width='235px;' height='185px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
 					echo $read_more;			
 				
 			}
 		?>
 					
 			</div>	
+			
+		
+			
+			</div>
 					
 				
-					
+				</div>	
 		
 			<div class="Lastnav">
 				<p style="position:absolute; top:50px; left: 160px; color:#fff "> 

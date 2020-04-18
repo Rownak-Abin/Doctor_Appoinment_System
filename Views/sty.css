@@ -1,3 +1,61 @@
+			body{
+				
+	
+				background: linear-gradient(to bottom,#A6FFEA ,#40BFFF 	);
+				
+				
+	
+	
+			}
+
+			
+			.search-box{
+				border-radius:30px;
+				background:white;
+				
+			}
+			
+			.search-btn{
+				
+				float:right;
+				width:40px;
+				height:42px;	
+				border-radius:10%;
+				background:#00BFFF;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				position:absolute;
+				left:1413px;
+				top:101.5px;
+				
+			}
+			
+			.search-txt{
+				border:none;				
+				background: transparent;		
+				float:left;
+				padding-left:10px;
+				color:#FFFACD;
+				font-size:16px;
+				position:absolute;
+				top:102px;
+				left:1245px;
+				width:200px;
+				height:40px;
+				
+				
+			}
+
+			
+			/* .search-txt:hover{
+				
+				background:white;
+				border-radius:30px;
+			}*/
+			
+
+
 
 
 			nav{
@@ -12,6 +70,12 @@
 				opacity:0.4;
 				
 			}
+			
+			
+			
+			
+			
+			
 			nav ul{
 				list-style:none;
 				float:right;
@@ -72,7 +136,7 @@
 			}
 			
 			.MainMenu ul li:hover ul{
-				background:#fff;
+				background:#000;
 				display: block;
 				opacity:1;
 				visibility:visible; 
@@ -80,6 +144,8 @@
 			}
 			
 			.MainMenu ul li a{
+				
+				
 				
 				line-height:120px;
 				height:10px;
@@ -95,6 +161,7 @@
 			
 			.MainMenu ul li a:hover{
 				color: #fff;
+				
 				
 				background:#2196f3;
 				box-shadow: 0 0 10px #2196f3, 0 0 10px #2196f3,
@@ -124,7 +191,7 @@
 				display:flex;
 				align-items:center;
 				top:-30px;
-				height:75px;
+				height:67px;
 			
 				
 			}
@@ -142,7 +209,7 @@
 				top:1790px;
 				left: 0px;
 				height:280px;
-				background:#20B2AA;
+				background:#00B395;
 				width:100%
 
 				}
@@ -176,4 +243,29 @@
 		
 		text-color:red;
 	}
+	
+		.frame{	
+			position:absolute;
+			
+			top: 680px;
+			width: 410px;
+			height: 480px;  
+			background:		#F5FFFA;
+			box-sizing: border-box;
+			padding-top: 35px;
+			padding-left:20px;
+			border-radius:17px;
+			shadow:20px;
+			transition: 0.5s ease;
+			cursor: pointer;
+		
+		}
+		
+		.frame:hover{
+			
+			transform: scale(1.08);
+			box-shadow:5px 5px 15px rgba(0,0,0,0.6);
+			
+			
+		}
 	

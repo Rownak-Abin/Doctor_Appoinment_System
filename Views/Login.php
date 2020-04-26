@@ -15,6 +15,7 @@
 	$pass="";
 	$err_pass="";
 	$has_error=false;
+	$invalid="";
 	
 		if(isset($_POST['submit'])){
 			
@@ -53,8 +54,12 @@
 			$result=get($query);
 			if(mysqli_num_rows($result) > 0)
 			{
+				
+				session_start();
+				$_SESSION["loggedinuser"]=$un;
+				
+				
 				$row=mysqli_fetch_assoc($result);
-				//setcookie("loggedinuser",$row["name"],time()+120);
 				$cat=$row["category"];
 				
 				if($cat=="Admin"){
@@ -68,7 +73,9 @@
 			}
 			else
 			{
-				echo "<p style='color:#ffff33; position:absolute; left:720px; top:500px; '>Invalid Login</p>";
+				
+				$invalid="Invalid Login";
+				
 			}
 		}
 		
@@ -79,6 +86,8 @@
 	
 	
 	?>
+	<a href="hos.php" style="position:absolute;  left:1450px; top:30px;"><input style="background:	#FFFACD; border:none;" type="button" value="X" ></a>
+	
     <div class="login-box">
     <img src="img/avatar.png" class="avatar">
         <h1>Login Here</h1>
@@ -95,13 +104,15 @@
 			
         <input class="LogBut" type="submit" name="submit" value="Login">
 		
+		<p style='color:yellow; position:absolute; left:115px; top:375px; '><?php echo $invalid; ?></p>
+		
                
             </form>
         
         
         </div>
 		
-		<a href="hos.php"> <input type="button" style="position: absolute; top:10px; color:#fff; left:15px; background:black; border:none;" name="back" value="<"> </a>
+		
     
     </body>
 </html>

@@ -20,11 +20,14 @@
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-		echo $target_file;
+		
+		
+		if(!empty($hdr) && !empty($desc) && !empty($target_file)){
+		
 		$query="UPDATE news SET category='$categ', header='$hdr',  text='$desc', image='$target_file' WHERE id=$pos";
 		execute($query);
 		//header("Location:../views/allproducts.php");
-		
+		}
 		
 			
 		
@@ -54,15 +57,18 @@
 		
 		//	echo $DCat, $DName, $DId, $DPas, $DQlf;
 		
+		if(!empty($DCat) && !empty($DName) && !empty($DPas) && !empty($DQlf) && !empty($target_file)){
+		
+		
 		$query="INSERT INTO doclist( category,	name,	password,	qualification,	image) 
 		VALUES( '$DCat', '$DName', '$DPas', '$DQlf', '$target_file')";
 		execute($query);
 		
+		}
+		
 		
 	}
-
-
-
+	
 	
 			function insertPatient()
 			{
@@ -78,12 +84,9 @@
 			
 				$prblms=$_POST["History"];
 				$fns= implode(", ", $prblms);
-			
-			
-			}
-			
 		
-			
+			}
+		
 		
 				$nm=$_POST["fstnm"];
 				$phn=$_POST["phone"];
@@ -97,7 +100,8 @@
 				$desc=$_POST["description"];
 				
 				
-				
+				if(!empty($nm) && !empty($phn) && !empty($eml) && !empty($age) && !empty($gen)
+					&& !empty($wgt) && !empty($hgt) && !empty($desc)){
 				
 					$query= "INSERT INTO patRequest (docid, patname, gender, phone, email, age, weight, height, existing, currprblm) 
 					VALUES ($id, '$nm', '$gen', $phn, '$eml', $age, $wgt, '$hgt', '$fns', '$desc')";
@@ -105,9 +109,21 @@
 				
 				
 				execute($query);
+					
+				
+				echo "<script> alert('Request sent successfully');
+					 window.location.href = 'hos.php';
+					</script>";
+				
+					}
+			
+				
+				}
+				
+				//;
 
 		
-			}
+			
 			
 			
 			
@@ -119,17 +135,28 @@
 					
 					
 					echo "<script> alert('Request not sent');
-					 window.location.href = 'DocList.php';
+					 window.location.href = 'hos.php';
 					</script>";
 					
 				}
 				else{
 					
 					echo "<script> alert('Request sent successfuly');
-					 window.location.href = 'DocList.php';
+					 window.location.href = 'hos.php';
 					</script>";
 					
 				}
 				
-	
+				
+			}
+				
+				
+			
+			
+			
+			
+
 	?>
+	
+		
+	

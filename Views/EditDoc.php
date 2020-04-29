@@ -1,3 +1,8 @@
+<?php
+	session_start();
+?>
+
+
 <html>
 	<head>
 	
@@ -40,6 +45,11 @@
 	require_once "../Model/db_connect.php";
 	require "../Controller/AuthorController.php";
 	
+	if(!isset($_SESSION['loggedinuser']))
+	{
+		header("Location:hos.php");
+	}
+	
 	
 		if(isset($_POST['Edit'])){
 		if(!empty($_POST['editId'])){
@@ -62,7 +72,7 @@
 	
 	
 	
-	<input type="submit" name="Edit" value="Continue" class="Rqbutton" style="position:absolute; top:112px; left:37%;"><br><br>
+	<input type="submit" name="Edit" value="Continue" class="Rqbutton" style="position:absolute; padding-left:25px; top:112px; left:37%;"><br><br>
 	
 	
 	<label style="position:relative; left:20%; font-family:Bahnschrift; font-size:40px;">Show All Doctors</label><hr><br>
@@ -106,7 +116,7 @@
 				
 				<ul>
 					<li><a class="active" href="hos.php">Home</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="Author.php">Main Menu</a></li>
 					<li><a href="#">Contact us</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="Logout.php"> Log Out</a></li>

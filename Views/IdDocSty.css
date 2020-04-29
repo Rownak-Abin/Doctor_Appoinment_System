@@ -129,17 +129,18 @@ body{
 			
 			
 			border: none;
-			border: 2px solid #000;
-			background: #00D4FF;
+			border: 1px solid #696969;
+			background-image:linear-gradient(to right, #9BFDF7, #00CDFF);
 			outline: none;
-			height: 30px;
+			height: 35px;
+			width:115px;
 			color: #000;
 			font-size: 16px;
-			padding-left: 35px;
+			padding-left: 32px;
 			padding-right: 35px;
 			margin-left:50px;
-			border-radius: 16px;
-			box-shadow:1.5px 1.5px 5px rgba(0,0,0,0.3);
+			border-radius: 6px;
+			box-shadow:0.5px 0.5px 2px rgba(0,0,0,0.2);
 		}
 
 
@@ -147,8 +148,10 @@ body{
 		.Rqbutton:hover{
 	
 			cursor: pointer;
-			background: #39dc79;
+			background: #BCFAB5;
 			color: #000;
+			
+			box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 		}
 		
 		

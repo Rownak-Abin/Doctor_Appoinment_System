@@ -1,7 +1,22 @@
+<?php
+	session_start();
+?>
 <html>
 	<head>
 	
 	    <link rel="stylesheet" type="text/css" href="IdDocSty.css"> 
+		
+		<style>
+			.Rqbutton{
+				background-image:linear-gradient(to right, #9BFDF7, #32FFF2);
+			}
+			
+			.Rqbutton:hover{
+				background:#60E96E;
+			}
+			
+			
+		</style>
 		
 		
 	</head>
@@ -19,10 +34,10 @@
 	
 	
 	
-	/*	if(!isset($_SESSION['loggedinuser']))
-			{
-				header("Location:hos.php");
-			}*/
+			if(!isset($_SESSION['loggedinuser']))
+				{
+					header("Location:hos.php");
+				}
 			
 	$cat="";
 	$err_cat="";
@@ -201,7 +216,7 @@
 				
 				<ul>
 					<li><a class="active" href="hos.php">Home</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="Author.php">Main Menu</a></li>
 					<li><a href="#">Contact us</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="Logout.php"> Log Out</a></li>

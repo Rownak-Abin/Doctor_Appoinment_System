@@ -1,42 +1,14 @@
+<?php
+	session_start();
+?>
+
 <html>
 	<head>
 	    <link rel="stylesheet" type="text/css" href="IdDocSty.css"> 
 		
-		<style>
-		.Rqbutton{
-			
-			
-			border: none;
-			border: 2px solid #000;
-			background: #00D4FF;
-			outline: none;
-			height: 30px;
-			color: #000;
-			font-size: 16px;
-			padding-left: 35px;
-			padding-right: 35px;
-			margin-left:50px;
-			border-radius: 16px;
 
-		}
-
-
-
-		.Rqbutton:hover{
-	
-			cursor: pointer;
-			background: #39dc79;
-			color: #000;
-		}
-	</style>
-		
-		
 		</head>
-		
-		
-			
-		
-	
+
 	
 	<body>
 		<form method="POST" enctype="multipart/form-data">
@@ -45,12 +17,26 @@
 		<?php
 		
 		require_once "../Model/db_connect.php";
+		require "../Controller/AuthorController.php";
+		
+			if(!isset($_SESSION['loggedinuser']))
+				{
+					header("Location:hos.php");
+				}
+		
 		
 				if(isset($_GET['editid'])){
 				$eid = $_GET['editid'];
 				
 				
 			}
+			
+			if(isset($_POST['deleteinfo'])){
+				
+				deleteDoc($eid);
+				
+			}
+			
 			
 			$qur="SELECT * FROM doclist WHERE id=$eid";
 			
@@ -90,7 +76,7 @@
 			execute($qu);
 			
 			echo "<script> alert('Successfully Edited');
-					 window.location.href = 'Author.php';
+					 window.location.href = 'EditDoc.php';
 					</script>";
 			}
 		
@@ -133,11 +119,6 @@
 	
 	
 	
-	
-	
-	
-	
-	
 	<label style="position:relative; left:20%; font-family:Cambria; font-size:20px;"> Password </label>		
 	
 	<input type="text" name="docps" value="<?php echo $pass; ?>"   style=" position:relative; left:22%;width:180px;">
@@ -173,7 +154,7 @@
 				
 				<ul>
 					<li><a class="active" href="hos.php">Home</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="Author.php">Main Menu</a></li>
 					<li><a href="#">Contact us</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="Login.php"> Log Out</a></li>

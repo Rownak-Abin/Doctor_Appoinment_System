@@ -51,25 +51,27 @@
 .Rqbutton{
 		position:absolute;
 		top:488px;
-		 border: none;
+		 
 		border: 1px solid #000;
 		background: #00D4FF;
 		left:500px;
 		outline: none;
-		height: 30px;
+		height: 35px;
 		color: #000;
 		font-size: 16px;
 		padding-left: 35px;
 		padding-right: 35px;
 		margin-left:-235px;
-		border-radius: 16px;
+		border-radius: 6px;
+		box-shadow:0.5px 0.5px 2px rgba(0,0,0,0.2);
+		background-image:linear-gradient(to right, #9BFDF7, #28DBEF);
 
 			}
 			
 	.Rqbutton:hover{
-		 background: #FF4D4D;
-		
-		
+		 background: #FA5C5C;
+		color: #fff;
+		box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 		
 	}
 

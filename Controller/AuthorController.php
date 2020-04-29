@@ -120,8 +120,20 @@
 				
 				}
 				
-				//;
-
+				
+				
+				function deleteDoc($id){
+					
+					$qr= "DELETE FROM doclist WHERE id=$id";
+					
+					$x= execute($qr);
+					
+					echo "<script> alert('Deleted successfully');
+					 window.location.href = 'EditDoc.php';
+					</script>";
+					
+					
+				}
 		
 			
 			

@@ -1,25 +1,9 @@
 
 	<html>
 		<head>
-		
-		<style>
-		
-		.frame{	
-			position:relative;
-			left: 320px;
-			top: 10px;
-			width: 1300px;
-			height: 470px;  
-			background:	#CCFFFF;
-			box-sizing: border-box;
-			padding-top: 15px;
-			padding-left:21px;
-		
-		}
-	
-		
-		</style>
-			<link rel="stylesheet" type="text/css" href="sty.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<link rel="stylesheet" type="text/css" href="style/sty.css">
 	
 		<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -33,7 +17,8 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		
 		
 			<script>
 		function search()
@@ -54,12 +39,10 @@
 		
 		
 		
-		
-		
 		</head>
 	
 	
-	<body  style="  height:2040px;  " >
+	<body  style="  height:1900px;   " >
 	
 	
 		
@@ -118,16 +101,12 @@
 		
 		<div class="MainMenu">
 				<ul>
-					<li><a>     </a></li>
-					<li><a>     </a></li>
-					<li><a>     </a></li>
-					<li><a>     </a></li>
-					<li><a>     </a></li>
-					<li><a class="active" href="#">HOME</a></li>					
-					<li><a style="position:relative; margin-left:10px;" href="#">NEWS</a></li>
-					<li><a style="width:900px;">&nbsp &nbsp &nbsp  SPECIALISTS</a>
+					
+					<li style="position:absolute; top:0; left:270px;"><a class="active" href="#"><i class="fa fa-home">&nbsp HOME</i></a></li>					
+					<li style="position:absolute; top:0; left:410px;"><a style="position:relative; margin-left:10px;" href="#news"><i class="fa fa-list">&nbsp NEWS</i></a></li>
+					<li style="position:absolute; top:0; left:560px;"><a style="width:900px;"><i class="fa fa-user-md"> &nbsp SPECIALISTS</i></a>
 					<div class="ulul">
-						<ul >
+						<ul  >
 							<li><a style="padding-left:50px; " href="DocList.php?category=Cardiologist">Cardiologist</a></li>
 							<li><a style="padding-left:55px;" href="DocList.php?category=Nephrologist">Nephrologist</a></li>
 							<li style="padding-left:-5px;"><a href="DocList.php?category=Gastroenterologist">Gastroenterology</a></li>
@@ -138,8 +117,8 @@
 						</ul>
 					</div>
 					</li>
-					<li><a style="position:relative; margin-left:-10px;" href="#">FOR DOCTORS</a></li>
-					<li><a href="#">HEALTH LIBRARY</a></li>
+					<li style="position:absolute; top:0; left:750px;"><a  href="#"><i class="fa fa-info-circle">&nbsp FOR DOCTORS</i></a></li>
+					<li style="position:absolute; top:0; left:940px;"><a href="#"><i class="fa fa-h-square">&nbsp HEALTH LIBRARY</i></a></li>
 				
 				</ul>
 				
@@ -174,7 +153,7 @@
 	
 	?>
 	
-			<div style="position:relative; color:#00008B; left:105px; width:500px; font-size:28px; top:-40px;">
+			<div style="position:relative;  color:#00008B; left:105px; width:500px; font-size:28px; top:-40px;" id="news">
 					News & Events<br><hr color="#8B4513" width="1317px" style="height:0.2px;">
 			
 			
@@ -214,9 +193,7 @@
 					
 			</div>		
 					
-					
-					
-					
+				
 					
 			<div class="frame" style="left: 558px;">		
 			<div style="position:absolute; top:20px; color:#000; text-align:justify; left:20px; width:368px;">		
@@ -310,8 +287,7 @@
 				
 					echo "<div style='font-size:23px; color:#DC143C;'> <td> $rows[header] </td><br><hr color='	#00BFFF	'> </div>";
 					echo "<img src= '$rows[image]' width='235px;' height='185px;' style='border:solid black 1px; padding:2px;  float:left; margin-right:10px; margin-bottom:5px;'>";
-					echo $read_more;			
-				
+					echo $read_more;						
 			}
 		?>
 					
